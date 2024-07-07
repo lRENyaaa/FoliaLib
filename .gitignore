@@ -38,4 +38,4 @@ cache/
 ### Mac OS ###
 .DS_Store
 
-/JarBuild/dependency-reduced-pom.xml
+/build/dependency-reduced-pom.xml
