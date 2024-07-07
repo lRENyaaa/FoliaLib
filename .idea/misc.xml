@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint: Accessibility</id>
+          </State>
+          <State>
+            <id>Android Lint: Compliance</id>
+          </State>
+          <State>
+            <id>Android Lint: Correctness</id>
+          </State>
+          <State>
+            <id>Android Lint: Internationalization</id>
+          </State>
+          <State>
+            <id>Android Lint: Interoperability</id>
+          </State>
+          <State>
+            <id>Android Lint: Lint Implementation Issues</id>
+          </State>
+          <State>
+            <id>Android Lint: Performance</id>
+          </State>
+          <State>
+            <id>Android Lint: Productivity</id>
+          </State>
+          <State>
+            <id>Android Lint: Security</id>
+          </State>
+          <State>
+            <id>Android Lint: Usability</id>
+          </State>
+          <State>
+            <id>Bukkit</id>
+          </State>
+          <State>
+            <id>BungeeCord</id>
+          </State>
+          <State>
+            <id>Compose 预览</id>
+          </State>
+          <State>
+            <id>GPathGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>JSON 和 JSON5</id>
+          </State>
+          <State>
+            <id>JVM 语言</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 11Java 语言级别迁移帮助Java</id>
+          </State>
+          <State>
+            <id>Java 8Java 语言级别迁移帮助Java</id>
+          </State>
+          <State>
+            <id>Java 语言级别迁移帮助Java</id>
+          </State>
+          <State>
+            <id>Java 语言级迁移帮助Java</id>
+          </State>
+          <State>
+            <id>JavaFX</id>
+          </State>
+          <State>
+            <id>JavadocJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Kotlin Android</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>MCP</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>Minecraft</id>
+          </State>
+          <State>
+            <id>MinecraftForge</id>
+          </State>
+          <State>
+            <id>Mixin</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>RoomAndroid</id>
+          </State>
+          <State>
+            <id>Screen sizesLintAndroid</id>
+          </State>
+          <State>
+            <id>ShrinkerAndroid</id>
+          </State>
+          <State>
+            <id>Sponge</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>UI 窗体</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>代码Plugin DevKit</id>
+          </State>
+          <State>
+            <id>代码成熟度Java</id>
+          </State>
+          <State>
+            <id>代码样式问题Java</id>
+          </State>
+          <State>
+            <id>克隆问题Java</id>
+          </State>
+          <State>
+            <id>其他问题Kotlin</id>
+          </State>
+          <State>
+            <id>冗余结构Kotlin</id>
+          </State>
+          <State>
+            <id>可移植性Java</id>
+          </State>
+          <State>
+            <id>可能引起混淆的代码结构Groovy</id>
+          </State>
+          <State>
+            <id>可能的错误Java</id>
+          </State>
+          <State>
+            <id>可能的错误Kotlin</id>
+          </State>
+          <State>
+            <id>可见性Java</id>
+          </State>
+          <State>
+            <id>命名约定Java</id>
+          </State>
+          <State>
+            <id>命名约定Kotlin</id>
+          </State>
+          <State>
+            <id>国际化Java</id>
+          </State>
+          <State>
+            <id>声明冗余Java</id>
+          </State>
+          <State>
+            <id>安全性Java</id>
+          </State>
+          <State>
+            <id>完成Java</id>
+          </State>
+          <State>
+            <id>导入Java</id>
+          </State>
+          <State>
+            <id>封装Java</id>
+          </State>
+          <State>
+            <id>工作区模型Plugin DevKit</id>
+          </State>
+          <State>
+            <id>序列化问题Java</id>
+          </State>
+          <State>
+            <id>性能Java</id>
+          </State>
+          <State>
+            <id>抽象问题Java</id>
+          </State>
+          <State>
+            <id>描述文件Plugin DevKit</id>
+          </State>
+          <State>
+            <id>插件描述符Plugin DevKit</id>
+          </State>
+          <State>
+            <id>样式Groovy</id>
+          </State>
+          <State>
+            <id>样式问题Kotlin</id>
+          </State>
+          <State>
+            <id>模式验证</id>
+          </State>
+          <State>
+            <id>注解Groovy</id>
+          </State>
+          <State>
+            <id>测试框架JVM 语言</id>
+          </State>
+          <State>
+            <id>类命名约定Java</id>
+          </State>
+          <State>
+            <id>类结构Java</id>
+          </State>
+          <State>
+            <id>线程问题Groovy</id>
+          </State>
+          <State>
+            <id>线程问题Java</id>
+          </State>
+          <State>
+            <id>继承问题Java</id>
+          </State>
+          <State>
+            <id>记录Java</id>
+          </State>
+          <State>
+            <id>详细或冗余的代码结构Java</id>
+          </State>
+          <State>
+            <id>迁移Kotlin</id>
+          </State>
+          <State>
+            <id>错误处理Java</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+</project>

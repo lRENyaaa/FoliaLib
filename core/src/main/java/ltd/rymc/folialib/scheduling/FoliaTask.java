@@ -1,0 +1,97 @@
+/*
+ * MorePaperLib
+ * Copyright © 2024 Anand Beh
+ *
+ * MorePaperLib is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MorePaperLib is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with MorePaperLib. If not, see <https://www.gnu.org/licenses/>
+ * and navigate to version 3 of the GNU Lesser General Public License.
+ */
+
+package ltd.rymc.folialib.scheduling;
+
+import org.bukkit.plugin.Plugin;
+import org.checkerframework.checker.nullness.qual.Nullable;
+
+class FoliaTask implements ScheduledTask {
+
+	private final io.papermc.paper.threadedregions.scheduler.ScheduledTask task;
+
+	FoliaTask(io.papermc.paper.threadedregions.scheduler.ScheduledTask task) {
+		this.task = task;
+	}
+
+	static FoliaTask ofNullable(io.papermc.paper.threadedregions.scheduler.@Nullable ScheduledTask task) {
+		return (task == null) ? null : new FoliaTask(task);
+	}
+
+	@Override
+	public Plugin owningPlugin() {
+		return task.getOwningPlugin();
+	}
+
+	@Override
+	public void cancel() {
+		task.cancel();
+	}
+
+	@Override
+	public boolean isCancelled() {
+		return task.isCancelled();
+	}
+
+	@Override
+	public ExecutionState getExecutionState() {
+		ExecutionState executionState;
+		switch (task.getExecutionState()) {
+		case IDLE:
+			executionState = ExecutionState.IDLE;
+			break;
+		case RUNNING:
+			executionState = ExecutionState.RUNNING;
+			break;
+		case FINISHED:
+			executionState = ExecutionState.FINISHED;
+			break;
+		case CANCELLED:
+			executionState = ExecutionState.CANCELLED;
+			break;
+		case CANCELLED_RUNNING:
+			executionState = ExecutionState.CANCELLED_RUNNING;
+			break;
+		default:
+			throw new IncompatibleClassChangeError("Breaking changes occurred to Folia's ExecutionState");
+		}
+		return executionState;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		FoliaTask foliaTask = (FoliaTask) o;
+		return task.equals(foliaTask.task);
+	}
+
+	@Override
+	public int hashCode() {
+		return task.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return "FoliaTask{" +
+				"task=" + task +
+				'}';
+	}
+
+}
