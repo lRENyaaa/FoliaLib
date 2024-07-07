@@ -1,0 +1,5 @@
+jdk:
+  - openjdk21
+install:
+  - mvn clean package
+  - mvn install -pl build -am
