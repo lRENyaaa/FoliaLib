@@ -39,3 +39,4 @@ cache/
 .DS_Store
 
 /build/dependency-reduced-pom.xml
+/.idea/
