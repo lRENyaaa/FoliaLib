@@ -9,11 +9,13 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>libs/Lib_1_21_4</module>
         <module>libs/Lib_1_21_1</module>
         <module>libs/Lib_1_20_6</module>
         <module>libs/Lib_1_20_4</module>
         <module>libs/Lib_1_20_2</module>
         <module>libs/Lib_1_20_1</module>
+        <module>nms/NMS_1_21_4</module>
         <module>nms/NMS_1_21_1</module>
         <module>nms/NMS_1_20_6</module>
         <module>nms/NMS_1_20_4</module>
