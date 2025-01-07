@@ -1,6 +1,7 @@
 package ltd.rymc.folialib.nms.utils;
 
 import ltd.rymc.folialib.FoliaLib;
+import ltd.rymc.folialib.nms.VersionMap;
 import ltd.rymc.folialib.platform.Platform;
 import org.bukkit.World;
 
@@ -14,7 +15,7 @@ public interface FoliaUtils {
         }
 
         try {
-            String managerPath = FoliaLib.class.getPackage().getName() + ".nms." + FoliaLib.getServerVersion() + ".FoliaNMSUtils";
+            String managerPath = FoliaLib.class.getPackage().getName() + ".nms." + VersionMap.mapVersion(FoliaLib.getServerVersion()) + ".FoliaNMSUtils";
             return (FoliaUtils) Class.forName(managerPath).getConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
                  NoSuchMethodException | ClassNotFoundException e) {
