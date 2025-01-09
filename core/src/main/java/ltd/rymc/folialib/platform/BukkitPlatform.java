@@ -1,23 +1,14 @@
 package ltd.rymc.folialib.platform;
 
-import ltd.rymc.folialib.FoliaLib;
+import ltd.rymc.folialib.nms.worldmanager.BukkitWorldManager;
 import ltd.rymc.folialib.nms.worldmanager.WorldManager;
-import ltd.rymc.folialib.scheduling.GracefulScheduling;
-import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.block.Block;
-
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
+import ltd.rymc.folialib.scheduler.SchedulerProvider;
+import ltd.rymc.folialib.scheduler.bukkit.BukkitSchedulerProvider;
+import org.bukkit.plugin.Plugin;
 
 public class BukkitPlatform implements Platform {
 
-    private final Experimental experimental = BukkitExperimental.create(this);
-    private final FoliaLib foliaLib;
-
-    public BukkitPlatform(FoliaLib foliaLib){
-        this.foliaLib = foliaLib;
-    }
+    private final WorldManager worldManager = new BukkitWorldManager();
 
     @Override
     public boolean isFolia() {
@@ -25,53 +16,19 @@ public class BukkitPlatform implements Platform {
     }
 
     @Override
-    public GracefulScheduling scheduling() {
-        return new GracefulScheduling(foliaLib, this);
+    public SchedulerProvider scheduling(Plugin plugin) {
+        return new BukkitSchedulerProvider(plugin);
     }
 
     @Override
-    public Experimental experimental() {
-        return Objects.requireNonNull(experimental);
+    public WorldManager worldManager() {
+        return worldManager;
     }
 
     @Override
-    public boolean experimentalAvailability() {
+    public boolean worldManagerAvailability() {
         return true;
     }
 
-    public static class BukkitExperimental implements Experimental {
 
-        private final Platform platform;
-        private final WorldManager worldManager;
-
-        private BukkitExperimental(Platform platform) {
-            this.platform = platform;
-            this.worldManager = WorldManager.getInstance(platform);
-        }
-
-        private static BukkitExperimental create(Platform platform) {
-            return new BukkitExperimental(platform);
-        }
-
-
-        @Override
-        public WorldManager worldManager() {
-            return worldManager;
-        }
-
-        @Override
-        public void runForAllRegions(Runnable runnable){
-            platform.scheduling().globalRegionalScheduler().run(runnable);
-        }
-
-        @Override
-        public void runForAllRegionsInWorld(World world, Runnable runnable){
-            platform.scheduling().globalRegionalScheduler().run(runnable);
-        }
-
-        @Override
-        public CompletableFuture<Block> getBlockInRegionThread(Location location){
-            return CompletableFuture.completedFuture(location.getBlock());
-        }
-    }
 }

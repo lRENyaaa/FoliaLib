@@ -23,6 +23,7 @@
         <module>nms/NMS_1_20_1</module>
         <module>core</module>
         <module>build</module>
+        <module>logger</module>
 
     </modules>
 
