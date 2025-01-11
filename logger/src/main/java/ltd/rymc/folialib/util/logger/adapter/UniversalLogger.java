@@ -1,4 +1,4 @@
-package ltd.rymc.folialib.util.adapter;
+package ltd.rymc.folialib.util.logger.adapter;
 
 public interface UniversalLogger {
     void info(String message);

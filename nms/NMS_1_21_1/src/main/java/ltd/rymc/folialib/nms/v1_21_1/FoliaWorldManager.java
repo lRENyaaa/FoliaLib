@@ -12,7 +12,7 @@ import com.mojang.serialization.Lifecycle;
 import io.papermc.paper.threadedregions.RegionizedServer;
 import io.papermc.paper.threadedregions.ThreadedRegionizer;
 import it.unimi.dsi.fastutil.longs.LongIterator;
-import ltd.rymc.folialib.nms.worldmanager.WorldManager;
+import ltd.rymc.folialib.nms.world.WorldManager;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.NbtException;

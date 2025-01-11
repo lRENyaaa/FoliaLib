@@ -24,6 +24,8 @@
 
 package ltd.rymc.folialib.scheduler.folia;
 
+import ltd.rymc.folialib.nms.region.ChunkPosition;
+import ltd.rymc.folialib.nms.region.Region;
 import ltd.rymc.folialib.scheduler.Scheduler;
 import ltd.rymc.folialib.scheduler.SchedulerProvider;
 import lombok.RequiredArgsConstructor;
@@ -52,11 +54,8 @@ public class FoliaSchedulerProvider implements SchedulerProvider {
     }
 
     @Override
-    public Scheduler getEntityScheduler(Object entity) {
-        if (entity instanceof Entity) {
-            return new FoliaEntityScheduler((Entity) entity, plugin);
-        }
-        throw new IllegalArgumentException("entity must be an instance of org.bukkit.entity.Entity");
+    public Scheduler getEntityScheduler(Entity entity) {
+        return new FoliaEntityScheduler(entity, plugin);
     }
 
     @Override
@@ -67,5 +66,11 @@ public class FoliaSchedulerProvider implements SchedulerProvider {
     @Override
     public Scheduler getChunkScheduler(World world, int chunkX, int chunkZ) {
         return new FoliaRegionScheduler(plugin, world, chunkX, chunkZ);
+    }
+
+    @Override
+    public Scheduler getRegionScheduler(Region region) {
+        ChunkPosition chunkPosition = region.getCenterChunkPosition();
+        return new FoliaRegionScheduler(plugin, chunkPosition.getWorld(), chunkPosition.getX(), chunkPosition.getCenterBlockZ());
     }
 }

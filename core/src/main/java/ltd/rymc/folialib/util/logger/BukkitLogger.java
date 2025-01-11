@@ -1,7 +1,7 @@
 package ltd.rymc.folialib.util.logger;
 
-import ltd.rymc.folialib.util.adapter.JulLoggerAdapter;
-import ltd.rymc.folialib.util.adapter.UniversalLogger;
+import ltd.rymc.folialib.util.logger.adapter.JulLoggerAdapter;
+import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 

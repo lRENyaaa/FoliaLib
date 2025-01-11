@@ -24,8 +24,10 @@
 
 package ltd.rymc.folialib.scheduler;
 
+import ltd.rymc.folialib.nms.region.Region;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 
 public interface SchedulerProvider {
 
@@ -33,10 +35,12 @@ public interface SchedulerProvider {
 
     Scheduler getAsyncScheduler();
 
-    Scheduler getEntityScheduler(Object entity);
+    Scheduler getEntityScheduler(Entity entity);
 
     Scheduler getLocationScheduler(Location location);
 
     Scheduler getChunkScheduler(World world, int chunkX, int chunkZ);
+
+    Scheduler getRegionScheduler(Region region);
 
 }

@@ -24,12 +24,14 @@
 
 package ltd.rymc.folialib.scheduler.bukkit;
 
+import ltd.rymc.folialib.nms.region.Region;
 import ltd.rymc.folialib.scheduler.Scheduler;
 import ltd.rymc.folialib.scheduler.SchedulerProvider;
 import ltd.rymc.folialib.scheduler.bukkit.schedulers.BukkitAsyncScheduler;
 import ltd.rymc.folialib.scheduler.bukkit.schedulers.BukkitMainScheduler;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.plugin.Plugin;
 
 public class BukkitSchedulerProvider implements SchedulerProvider {
@@ -53,7 +55,7 @@ public class BukkitSchedulerProvider implements SchedulerProvider {
     }
 
     @Override
-    public Scheduler getEntityScheduler(Object entity) {
+    public Scheduler getEntityScheduler(Entity entity) {
         return this.bukkitMainScheduler;
     }
 
@@ -66,4 +68,10 @@ public class BukkitSchedulerProvider implements SchedulerProvider {
     public Scheduler getChunkScheduler(World world, int chunkX, int chunkZ) {
         return this.bukkitMainScheduler;
     }
+
+    @Override
+    public Scheduler getRegionScheduler(Region region) {
+        return this.bukkitMainScheduler;
+    }
+
 }

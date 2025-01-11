@@ -1,6 +1,7 @@
 package ltd.rymc.folialib;
 
-import ltd.rymc.folialib.nms.worldmanager.WorldManager;
+import ltd.rymc.folialib.nms.region.RegionManager;
+import ltd.rymc.folialib.nms.world.WorldManager;
 import ltd.rymc.folialib.platform.BukkitPlatform;
 import ltd.rymc.folialib.platform.FoliaPlatform;
 import ltd.rymc.folialib.platform.Platform;
@@ -59,6 +60,25 @@ public class FoliaLib {
      */
     public static boolean worldManagerAvailability(){
         return PLATFORM.worldManagerAvailability();
+    }
+
+    /**
+     * Get a region manager that allows easy manipulation of regions by accessing more low-level components.
+     * Implemented using NMS in Folia, and availability must be checked with {@link Platform#regionManagerAvailability()} before use.
+     *
+     * @return the instance of world manager
+     */
+    public static RegionManager regionManager() {
+        return PLATFORM.regionManager();
+    }
+
+    /**
+     * Check if region manager are available
+     *
+     * @return the state of world manager
+     */
+    public static boolean regionManagerAvailability() {
+        return PLATFORM.regionManagerAvailability();
     }
 
     public static String getServerVersion(){

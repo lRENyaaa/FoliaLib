@@ -1,5 +1,6 @@
-package ltd.rymc.folialib.nms.worldmanager;
+package ltd.rymc.folialib.nms.bukkit;
 
+import ltd.rymc.folialib.nms.world.WorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;

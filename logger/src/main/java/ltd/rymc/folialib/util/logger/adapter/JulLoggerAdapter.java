@@ -1,4 +1,4 @@
-package ltd.rymc.folialib.util.adapter;
+package ltd.rymc.folialib.util.logger.adapter;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

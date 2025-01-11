@@ -1,4 +1,4 @@
-package ltd.rymc.folialib.util.adapter;
+package ltd.rymc.folialib.util.logger.adapter;
 
 import org.apache.logging.log4j.Logger;
 

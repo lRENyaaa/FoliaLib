@@ -31,7 +31,7 @@ import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
 import io.papermc.paper.threadedregions.scheduler.RegionScheduler;
-import ltd.rymc.folialib.util.adapter.UniversalLogger;
+import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import ltd.rymc.folialib.util.logger.BukkitLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

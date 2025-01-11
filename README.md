@@ -2,8 +2,8 @@
 A library created for personal development needs only.
 
 
-
 ## Credits
+* Basic implement: [Folia](https://github.com/PaperMC/Folia)
 * Scheduler: [Fairy](https://github.com/FairyProject/Fairy)
 * World management: [ZetaUtils](https://github.com/MikuMC/ZetaUtils)
 * World management reference: [MoreFoWorld](https://github.com/Folia-Inquisitors/MoreFoWorld)

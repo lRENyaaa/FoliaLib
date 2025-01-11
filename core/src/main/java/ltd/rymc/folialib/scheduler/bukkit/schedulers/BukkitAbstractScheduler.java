@@ -29,7 +29,7 @@ import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.bukkit.BukkitScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
-import ltd.rymc.folialib.util.adapter.UniversalLogger;
+import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.concurrent.Callable;

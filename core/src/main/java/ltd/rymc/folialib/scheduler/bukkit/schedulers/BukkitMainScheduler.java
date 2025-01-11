@@ -29,8 +29,8 @@ import ltd.rymc.folialib.scheduler.bukkit.BukkitRepeatedScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
 import lombok.RequiredArgsConstructor;
-import ltd.rymc.folialib.util.adapter.UniversalLogger;
 import ltd.rymc.folialib.util.logger.BukkitLogger;
+import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
