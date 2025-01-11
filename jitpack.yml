@@ -1,5 +1,0 @@
-jdk:
-  - openjdk17
-install:
-  - mvn clean package
-  - mvn install -pl build -am
