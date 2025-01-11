@@ -14,15 +14,15 @@ public class ChunkPosition {
     private final int z;
 
 
-    public Location getCenterLocation(){
-        return new Location(world, getCenterBlockX(), 0 , getCenterBlockZ());
+    public Location getCenterLocation() {
+        return new Location(world, getCenterBlockX(), 0, getCenterBlockZ());
     }
 
-    public int getCenterBlockX(){
+    public int getCenterBlockX() {
         return x << 4;
     }
 
-    public int getCenterBlockZ(){
+    public int getCenterBlockZ() {
         return z << 4;
     }
 

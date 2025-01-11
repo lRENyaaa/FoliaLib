@@ -24,11 +24,11 @@
 
 package ltd.rymc.folialib.scheduler.folia;
 
+import lombok.RequiredArgsConstructor;
 import ltd.rymc.folialib.nms.region.ChunkPosition;
 import ltd.rymc.folialib.nms.region.Region;
 import ltd.rymc.folialib.scheduler.Scheduler;
 import ltd.rymc.folialib.scheduler.SchedulerProvider;
-import lombok.RequiredArgsConstructor;
 import ltd.rymc.folialib.scheduler.folia.schedulers.FoliaAsyncScheduler;
 import ltd.rymc.folialib.scheduler.folia.schedulers.FoliaEntityScheduler;
 import ltd.rymc.folialib.scheduler.folia.schedulers.FoliaGlobalRegionScheduler;

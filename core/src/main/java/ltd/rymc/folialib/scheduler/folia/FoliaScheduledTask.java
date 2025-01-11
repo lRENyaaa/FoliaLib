@@ -24,9 +24,9 @@
 
 package ltd.rymc.folialib.scheduler.folia;
 
+import lombok.RequiredArgsConstructor;
 import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.folia.wrapper.WrapperScheduledTask;
-import lombok.RequiredArgsConstructor;
 
 import java.util.concurrent.CompletableFuture;
 

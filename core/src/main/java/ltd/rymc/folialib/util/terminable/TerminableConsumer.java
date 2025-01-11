@@ -40,7 +40,7 @@ public interface TerminableConsumer {
      * Binds with the given terminable.
      *
      * @param terminable the terminable to bind with
-     * @param <T> the terminable type
+     * @param <T>        the terminable type
      * @return the same terminable
      */
     @NotNull
@@ -50,7 +50,7 @@ public interface TerminableConsumer {
      * Binds with the given terminable module.
      *
      * @param module the module to bind with
-     * @param <T> the module type
+     * @param <T>    the module type
      * @return the same module
      */
     @NotNull

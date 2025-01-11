@@ -52,10 +52,13 @@ public interface TaskResponse<R> {
 
     TaskState getState();
 
-    @Nullable Throwable getThrowable();
+    @Nullable
+    Throwable getThrowable();
 
-    @Nullable String getErrorMessage();
+    @Nullable
+    String getErrorMessage();
 
-    @Nullable R getResult();
+    @Nullable
+    R getResult();
 
 }

@@ -1,57 +1,60 @@
 package ltd.rymc.folialib.platform;
 
 import ltd.rymc.folialib.nms.region.RegionManager;
-import ltd.rymc.folialib.scheduler.SchedulerProvider;
 import ltd.rymc.folialib.nms.world.WorldManager;
+import ltd.rymc.folialib.scheduler.SchedulerProvider;
 import org.bukkit.plugin.Plugin;
 
 public interface Platform {
 
     /**
-     * Check if the platform is folia
+     * Checks if the current platform is Folia.
      *
-     * @return result
+     * @return {@code true} if running on Folia, {@code false} otherwise.
      */
     boolean isFolia();
 
     /**
-     * Accesses scheduling
+     * Provides access to the scheduling system for the current platform.
      *
-     * @return the scheduling wrapper
+     * @param plugin the plugin requesting scheduling capabilities. Must not be {@code null}.
+     * @return a {@link SchedulerProvider} for managing tasks.
      */
     SchedulerProvider scheduling(Plugin plugin);
 
 
     /**
-     * Get world manager that is available for both Folia and Bukkit.
-     * Implemented using NMS in Folia, and availability must be checked with {@link Platform#worldManagerAvailability()} before use.
+     * Retrieves the world manager compatible with both Folia and Bukkit platforms.
+     * For Folia, it uses NMS-based implementation. Ensure availability by checking
+     * {@link Platform#worldManagerAvailability()} before invoking this method.
      *
-     * @return the instance of world manager
+     * @return the {@link WorldManager} instance for managing worlds.
+     * @throws UnsupportedOperationException if the world manager is unavailable.
      */
     WorldManager worldManager();
 
     /**
-     * Check if world manager are available
+     * Checks whether the world manager is available on the current platform.
      *
-     * @return the state of world manager
+     * @return {@code true} if the world manager is available, {@code false} otherwise.
      */
     boolean worldManagerAvailability();
 
     /**
-     * Get a region manager that allows easy manipulation of regions by accessing more low-level components.
-     * Implemented using NMS in Folia, and availability must be checked with {@link Platform#regionManagerAvailability()} before use.
+     * Retrieves the region manager for low-level region manipulation.
+     * For Folia, it uses an NMS-based implementation. Ensure availability by checking
+     * {@link Platform#regionManagerAvailability()} before invoking this method.
      *
-     * @return the instance of world manager
+     * @return the {@link RegionManager} instance for managing regions.
+     * @throws UnsupportedOperationException if the region manager is unavailable.
      */
     RegionManager regionManager();
 
     /**
-     * Check if region manager are available
+     * Checks whether the region manager is available on the current platform.
      *
-     * @return the state of world manager
+     * @return {@code true} if the region manager is available, {@code false} otherwise.
      */
     boolean regionManagerAvailability();
-
-
 
 }

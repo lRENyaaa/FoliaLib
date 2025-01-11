@@ -24,8 +24,8 @@
 
 package ltd.rymc.folialib.scheduler.bukkit.schedulers;
 
-import ltd.rymc.folialib.scheduler.TickBasedScheduler;
 import ltd.rymc.folialib.scheduler.ScheduledTask;
+import ltd.rymc.folialib.scheduler.TickBasedScheduler;
 import ltd.rymc.folialib.scheduler.bukkit.BukkitScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;

@@ -32,7 +32,11 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.ai.village.VillageSiege;
 import net.minecraft.world.entity.npc.CatSpawner;
 import net.minecraft.world.entity.npc.WanderingTraderSpawner;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.CustomSpawner;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.LevelSettings;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.LevelChunk;
@@ -48,6 +52,9 @@ import net.minecraft.world.level.validation.ContentValidationException;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
+import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.CraftWorld;
+import org.bukkit.craftbukkit.generator.CraftWorldInfo;
 import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.event.world.WorldUnloadEvent;
 import org.bukkit.generator.BiomeProvider;
@@ -65,16 +72,12 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.CraftWorld;
-import org.bukkit.craftbukkit.generator.CraftWorldInfo;
-
 public class FoliaWorldManager implements WorldManager {
 
     //TODO Did we ACTUALLY kill the region?
-    private void killAllThreadedRegionsOnce(@NotNull ServerLevel level){
+    private void killAllThreadedRegionsOnce(@NotNull ServerLevel level) {
         level.regioniser.computeForAllRegions(region -> {
-            for (;;) {
+            for (; ; ) {
                 boolean result;
 
                 try {
@@ -82,7 +85,7 @@ public class FoliaWorldManager implements WorldManager {
                     final Method tryKillMethod = threadedRegionClass.getDeclaredMethod("tryKill");
                     tryKillMethod.setAccessible(true);
                     result = (boolean) tryKillMethod.invoke(region);
-                }catch (Exception e){
+                } catch (Exception e) {
                     break;
                 }
 
@@ -102,7 +105,7 @@ public class FoliaWorldManager implements WorldManager {
         final int regionShift = world.moonrise$getRegionChunkShift();
         final int width = 1 << regionShift;
         world.regioniser.computeForAllRegions(region -> {
-            for (final LongIterator iterator = region.getOwnedSectionsUnsynchronised(); iterator.hasNext();) {
+            for (final LongIterator iterator = region.getOwnedSectionsUnsynchronised(); iterator.hasNext(); ) {
                 final long sectionKey = iterator.nextLong();
                 final int offsetX = CoordinateUtils.getChunkX(sectionKey) << regionShift;
                 final int offsetZ = CoordinateUtils.getChunkZ(sectionKey) << regionShift;
@@ -180,7 +183,7 @@ public class FoliaWorldManager implements WorldManager {
                     MinecraftServer.LOGGER.info(
                             "Saved " + savedChunk + " block chunks, " + savedEntity + " entity chunks, " + savedPoi
                             + " poi chunks in world '" + WorldUtil.getWorldName(world) + "', progress: "
-                            + format.format((double)(i+1)/(double)len * 100.0)
+                            + format.format((double) (i + 1) / (double) len * 100.0)
                     );
                 }
             }
@@ -213,7 +216,8 @@ public class FoliaWorldManager implements WorldManager {
 
             level.saveLevelData(!close);
 
-            if (!close) this.saveAllChunksNoCheck(level, level.moonrise$getChunkTaskScheduler().chunkHolderManager, flush, false, false,true,true); // Paper - rewrite chunk system
+            if (!close)
+                this.saveAllChunksNoCheck(level, level.moonrise$getChunkTaskScheduler().chunkHolderManager, flush, false, false, true, true); // Paper - rewrite chunk system
             if (close) this.closeChunkProvider(level, true);
 
         } else if (close) {
@@ -221,8 +225,8 @@ public class FoliaWorldManager implements WorldManager {
         }
     }
 
-    private void closeChunkProvider(@NotNull ServerLevel handle, boolean save){
-        this.closeChunkHolderManager(handle, handle.moonrise$getChunkTaskScheduler().chunkHolderManager, save, true,true, true, false);
+    private void closeChunkProvider(@NotNull ServerLevel handle, boolean save) {
+        this.closeChunkHolderManager(handle, handle.moonrise$getChunkTaskScheduler().chunkHolderManager, save, true, true, true, false);
         try {
             handle.chunkSource.getDataStorage().close();
         } catch (Exception exception) {
@@ -269,7 +273,7 @@ public class FoliaWorldManager implements WorldManager {
     }
 
 
-    private void removeWorldFromRegionizedServer(ServerLevel level){
+    private void removeWorldFromRegionizedServer(ServerLevel level) {
         try {
             final Class<RegionizedServer> targetClass = RegionizedServer.class;
             final Field worldListField = targetClass.getDeclaredField("worlds");
@@ -277,7 +281,7 @@ public class FoliaWorldManager implements WorldManager {
             final List<ServerLevel> worldList = (List<ServerLevel>) worldListField.get(RegionizedServer.getInstance());
 
             worldList.remove(level);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -335,7 +339,7 @@ public class FoliaWorldManager implements WorldManager {
             final Field worldsField = craftServerClass.getDeclaredField("worlds");
             worldsField.setAccessible(true);
             worlds = ((Map<String, World>) worldsField.get(craftServer));
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
 
@@ -346,7 +350,7 @@ public class FoliaWorldManager implements WorldManager {
 
     @Override
     public boolean unloadWorld(@NotNull String name, boolean save) {
-        return this.unloadWorld(Bukkit.getWorld(name),save);
+        return this.unloadWorld(Bukkit.getWorld(name), save);
     }
 
     @Override

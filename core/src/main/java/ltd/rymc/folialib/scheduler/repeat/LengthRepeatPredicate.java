@@ -1,7 +1,7 @@
 package ltd.rymc.folialib.scheduler.repeat;
 
-import ltd.rymc.folialib.scheduler.ScheduledTask;
 import lombok.RequiredArgsConstructor;
+import ltd.rymc.folialib.scheduler.ScheduledTask;
 
 import java.time.Duration;
 

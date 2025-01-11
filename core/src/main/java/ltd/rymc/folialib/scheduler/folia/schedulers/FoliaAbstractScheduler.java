@@ -24,10 +24,10 @@
 
 package ltd.rymc.folialib.scheduler.folia.schedulers;
 
+import ltd.rymc.folialib.scheduler.ScheduledTask;
+import ltd.rymc.folialib.scheduler.TickBasedScheduler;
 import ltd.rymc.folialib.scheduler.folia.FoliaScheduledTask;
 import ltd.rymc.folialib.scheduler.folia.wrapper.WrapperScheduledTask;
-import ltd.rymc.folialib.scheduler.TickBasedScheduler;
-import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
 import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;

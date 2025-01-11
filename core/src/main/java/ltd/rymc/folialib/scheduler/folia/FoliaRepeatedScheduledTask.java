@@ -24,12 +24,12 @@
 
 package ltd.rymc.folialib.scheduler.folia;
 
-import ltd.rymc.folialib.scheduler.folia.wrapper.WrapperScheduledTask;
-import ltd.rymc.folialib.scheduler.ScheduledTask;
-import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
-import ltd.rymc.folialib.scheduler.response.TaskResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import ltd.rymc.folialib.scheduler.ScheduledTask;
+import ltd.rymc.folialib.scheduler.folia.wrapper.WrapperScheduledTask;
+import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
+import ltd.rymc.folialib.scheduler.response.TaskResponse;
 import ltd.rymc.folialib.util.logger.BukkitLoggable;
 
 import java.util.concurrent.Callable;

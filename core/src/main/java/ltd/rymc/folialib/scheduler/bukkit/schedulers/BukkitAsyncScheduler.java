@@ -24,13 +24,13 @@
 
 package ltd.rymc.folialib.scheduler.bukkit.schedulers;
 
+import lombok.RequiredArgsConstructor;
 import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.bukkit.BukkitRepeatedScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
-import lombok.RequiredArgsConstructor;
-import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import ltd.rymc.folialib.util.logger.BukkitLogger;
+import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -65,7 +65,7 @@ public class BukkitAsyncScheduler extends BukkitAbstractScheduler {
     }
 
     @Override
-    protected UniversalLogger getLogger(){
+    protected UniversalLogger getLogger() {
         return BukkitLogger.getLogger(bukkitPlugin);
     }
 }

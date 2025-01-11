@@ -24,11 +24,11 @@
 
 package ltd.rymc.folialib.scheduler.bukkit;
 
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import ltd.rymc.folialib.util.logger.BukkitLoggable;
 import org.bukkit.scheduler.BukkitTask;
 

@@ -24,15 +24,15 @@
 
 package ltd.rymc.folialib.scheduler.folia.schedulers;
 
+import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;
+import ltd.rymc.folialib.scheduler.ScheduledTask;
+import ltd.rymc.folialib.scheduler.TickBasedScheduler;
 import ltd.rymc.folialib.scheduler.folia.FoliaRepeatedScheduledTask;
 import ltd.rymc.folialib.scheduler.folia.wrapper.WrapperScheduledTask;
-import ltd.rymc.folialib.scheduler.TickBasedScheduler;
-import ltd.rymc.folialib.scheduler.ScheduledTask;
 import ltd.rymc.folialib.scheduler.repeat.RepeatPredicate;
 import ltd.rymc.folialib.scheduler.response.TaskResponse;
-import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;
-import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import ltd.rymc.folialib.util.logger.BukkitLogger;
+import ltd.rymc.folialib.util.logger.adapter.UniversalLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -85,7 +85,7 @@ public class FoliaGlobalRegionScheduler extends FoliaAbstractScheduler implement
     }
 
     @Override
-    protected UniversalLogger getLogger(){
+    protected UniversalLogger getLogger() {
         return BukkitLogger.getLogger(bukkitPlugin);
     }
 }

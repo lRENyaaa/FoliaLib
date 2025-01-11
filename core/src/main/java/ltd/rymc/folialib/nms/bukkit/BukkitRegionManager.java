@@ -12,34 +12,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class BukkitRegionManager implements RegionManager {
-
-    @Override
-    public List<Region> getAllRegions(World world) {
-        return Collections.singletonList(new BukkitRegion());
-    }
-
-    @Override
-    public Region getRegionAt(World world, int chunkX, int chunkZ, boolean sync) {
-        return new BukkitRegion();
-    }
-
-    @Override
-    public Region getRegionAt(Location location, boolean sync) {
-        return new BukkitRegion();
-    }
-
-    @Override
-    public double getGlobalRegionTps(TpsReportLength length) {
-        return getTps(length);
-    }
-
-    @Override
-    public List<Entity> getLoadedEntities(World world) {
-        return world.getEntities();
-    }
+    private final BukkitRegion region = new BukkitRegion();
 
     public static double getTps(TpsReportLength length) {
-        switch (length){
+        switch (length) {
             // TODO: We need to implement TPS fetching in Bukkit separately,
             //  Maybe we can refer to the spark implementation.
             case SECONDS_5:
@@ -54,5 +30,29 @@ public class BukkitRegionManager implements RegionManager {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public List<Region> getAllRegions(World world) {
+        return Collections.singletonList(region);
+    }
+
+    @Override
+    public Region getRegionAt(World world, int chunkX, int chunkZ, boolean sync) {
+        return region;
+    }
+
+    @Override
+    public Region getRegionAt(Location location, boolean sync) {
+        return region;
+    }
+
+    @Override
+    public double getGlobalRegionTps(TpsReportLength length) {
+        return getTps(length);
+    }
+
+    @Override
+    public List<Entity> getLoadedEntities(World world) {
+        return world.getEntities();
+    }
 
 }

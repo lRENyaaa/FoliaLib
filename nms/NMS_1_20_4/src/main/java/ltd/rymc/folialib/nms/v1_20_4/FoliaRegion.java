@@ -14,7 +14,7 @@ public class FoliaRegion implements Region {
 
     private final ThreadedRegionizer.ThreadedRegion<TickRegions.TickRegionData, TickRegions.TickRegionSectionData> region;
 
-    public FoliaRegion(ThreadedRegionizer.ThreadedRegion<TickRegions.TickRegionData, TickRegions.TickRegionSectionData> region){
+    public FoliaRegion(ThreadedRegionizer.ThreadedRegion<TickRegions.TickRegionData, TickRegions.TickRegionSectionData> region) {
         this.region = region;
     }
 

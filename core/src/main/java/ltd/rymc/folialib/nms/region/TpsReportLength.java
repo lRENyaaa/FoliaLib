@@ -1,5 +1,8 @@
 package ltd.rymc.folialib.nms.region;
 
+/**
+ * Enum representing the available TPS report intervals.
+ */
 public enum TpsReportLength {
 
     SECONDS_5, // Not supported in bukkit

@@ -24,8 +24,8 @@
 
 package ltd.rymc.folialib.scheduler.bukkit;
 
-import ltd.rymc.folialib.scheduler.ScheduledTask;
 import lombok.RequiredArgsConstructor;
+import ltd.rymc.folialib.scheduler.ScheduledTask;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.concurrent.CompletableFuture;

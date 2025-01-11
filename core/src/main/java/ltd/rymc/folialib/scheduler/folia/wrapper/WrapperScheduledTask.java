@@ -28,12 +28,14 @@ import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.Method;
-
 @RequiredArgsConstructor
 public class WrapperScheduledTask {
 
     private final ScheduledTask scheduledTask;
+
+    public static WrapperScheduledTask of(@NotNull ScheduledTask scheduledTask) {
+        return new WrapperScheduledTask(scheduledTask);
+    }
 
     public Class<?> getTaskClass() {
         return scheduledTask.getClass();
@@ -41,10 +43,6 @@ public class WrapperScheduledTask {
 
     public void cancel() {
         scheduledTask.cancel();
-    }
-
-    public static WrapperScheduledTask of(@NotNull ScheduledTask scheduledTask) {
-        return new WrapperScheduledTask(scheduledTask);
     }
 
 }

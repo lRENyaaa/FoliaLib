@@ -24,8 +24,8 @@
 
 package ltd.rymc.folialib.scheduler.response;
 
-import ltd.rymc.folialib.scheduler.TaskState;
 import lombok.RequiredArgsConstructor;
+import ltd.rymc.folialib.scheduler.TaskState;
 import org.jetbrains.annotations.Nullable;
 
 @RequiredArgsConstructor

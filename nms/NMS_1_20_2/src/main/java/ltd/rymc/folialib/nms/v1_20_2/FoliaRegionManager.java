@@ -20,6 +20,26 @@ import java.util.function.Function;
 
 public class FoliaRegionManager implements RegionManager {
 
+    public static double getAverageTps(TickData.TickReportData report) {
+        return report.tpsData().segmentAll().average();
+    }
+
+    public static Function<TickRegionScheduler.RegionScheduleHandle, TickData.TickReportData> getReportMethod(TpsReportLength length) {
+        switch (length) {
+            case SECONDS_5:
+                return (handle) -> handle.getTickReport5s(System.nanoTime());
+            case SECONDS_15:
+                return (handle) -> handle.getTickReport15s(System.nanoTime());
+            case MINUTE_1:
+                return (handle) -> handle.getTickReport1m(System.nanoTime());
+            case MINUTES_5:
+                return (handle) -> handle.getTickReport5m(System.nanoTime());
+            case MINTUES_15:
+                return (handle) -> handle.getTickReport15m(System.nanoTime());
+        }
+        throw new UnsupportedOperationException();
+    }
+
     @Override
     public List<Region> getAllRegions(World world) {
         ServerLevel level = ((CraftWorld) world).getHandle();
@@ -60,25 +80,5 @@ public class FoliaRegionManager implements RegionManager {
             entities.add(entity.getBukkitEntity());
         }
         return entities;
-    }
-
-    public static double getAverageTps(TickData.TickReportData report){
-        return report.tpsData().segmentAll().average();
-    }
-
-    public static Function<TickRegionScheduler.RegionScheduleHandle, TickData.TickReportData> getReportMethod(TpsReportLength length){
-        switch (length){
-            case SECONDS_5:
-                return (handle) -> handle.getTickReport5s(System.nanoTime());
-            case SECONDS_15:
-                return (handle) -> handle.getTickReport15s(System.nanoTime());
-            case MINUTE_1:
-                return (handle) -> handle.getTickReport1m(System.nanoTime());
-            case MINUTES_5:
-                return (handle) -> handle.getTickReport5m(System.nanoTime());
-            case MINTUES_15:
-                return (handle) -> handle.getTickReport15m(System.nanoTime());
-        }
-        throw new UnsupportedOperationException();
     }
 }

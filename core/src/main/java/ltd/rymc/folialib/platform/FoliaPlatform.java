@@ -3,8 +3,8 @@ package ltd.rymc.folialib.platform;
 import ltd.rymc.folialib.FoliaLib;
 import ltd.rymc.folialib.nms.VersionMap;
 import ltd.rymc.folialib.nms.region.RegionManager;
-import ltd.rymc.folialib.scheduler.SchedulerProvider;
 import ltd.rymc.folialib.nms.world.WorldManager;
+import ltd.rymc.folialib.scheduler.SchedulerProvider;
 import ltd.rymc.folialib.scheduler.folia.FoliaSchedulerProvider;
 import org.bukkit.plugin.Plugin;
 
@@ -20,7 +20,7 @@ public class FoliaPlatform implements Platform {
     private final WorldManager worldManager = getWorldManager();
     private final RegionManager regionManager = getRegionManager();
 
-    private WorldManager getWorldManager(){
+    private WorldManager getWorldManager() {
         try {
             return (WorldManager) Class.forName(nmsPath + ".FoliaWorldManager").getConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
@@ -29,7 +29,7 @@ public class FoliaPlatform implements Platform {
         }
     }
 
-    private RegionManager getRegionManager(){
+    private RegionManager getRegionManager() {
         try {
             return (RegionManager) Class.forName(nmsPath + ".FoliaRegionManager").getConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
@@ -50,6 +50,7 @@ public class FoliaPlatform implements Platform {
 
     @Override
     public WorldManager worldManager() {
+        if (worldManager == null) throw new UnsupportedOperationException();
         return worldManager;
     }
 
@@ -60,6 +61,7 @@ public class FoliaPlatform implements Platform {
 
     @Override
     public RegionManager regionManager() {
+        if (regionManager == null) throw new UnsupportedOperationException();
         return regionManager;
     }
 

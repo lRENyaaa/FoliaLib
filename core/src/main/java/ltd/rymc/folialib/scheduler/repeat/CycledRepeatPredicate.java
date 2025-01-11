@@ -1,7 +1,7 @@
 package ltd.rymc.folialib.scheduler.repeat;
 
-import ltd.rymc.folialib.scheduler.ScheduledTask;
 import lombok.RequiredArgsConstructor;
+import ltd.rymc.folialib.scheduler.ScheduledTask;
 
 @RequiredArgsConstructor
 public class CycledRepeatPredicate<T> implements RepeatPredicate<T> {
