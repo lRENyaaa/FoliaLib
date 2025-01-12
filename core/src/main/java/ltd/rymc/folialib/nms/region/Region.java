@@ -1,6 +1,6 @@
 package ltd.rymc.folialib.nms.region;
 
-public interface Region {
+public interface Region <T> {
 
     /**
      * Retrieves the center chunk position of the region.
@@ -20,4 +20,5 @@ public interface Region {
      */
     double getTps(TpsReportLength length);
 
+    T getHandle();
 }

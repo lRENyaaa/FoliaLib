@@ -22,7 +22,7 @@ public interface RegionManager {
      * @param world the world for which to retrieve regions. Must not be {@code null}.
      * @return a list of wrapped {@link Region} objects for the specified world.
      */
-    List<Region> getAllRegions(World world);
+    List<Region<?>> getAllRegions(World world);
 
     /**
      * Retrieves the wrapped region located at the specified chunk coordinates in the given world.
@@ -34,7 +34,7 @@ public interface RegionManager {
      * @param sync   whether the operation should be synchronous.
      * @return the wrapped {@link Region} at the specified chunk coordinates.
      */
-    Region getRegionAt(World world, int chunkX, int chunkZ, boolean sync);
+    Region<?> getRegionAt(World world, int chunkX, int chunkZ, boolean sync);
 
     /**
      * Retrieves the wrapped region at the specified location in the given world.
@@ -44,7 +44,7 @@ public interface RegionManager {
      * @param sync     whether the operation should be synchronous.
      * @return the wrapped {@link Region} at the specified location.
      */
-    Region getRegionAt(Location location, boolean sync);
+    Region<?> getRegionAt(Location location, boolean sync);
 
     /**
      * Retrieves the global TPS (ticks per second) for regions over a specified time interval.

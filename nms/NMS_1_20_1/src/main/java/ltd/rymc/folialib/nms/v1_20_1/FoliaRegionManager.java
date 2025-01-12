@@ -41,15 +41,15 @@ public class FoliaRegionManager implements RegionManager {
     }
 
     @Override
-    public List<Region> getAllRegions(World world) {
+    public List<Region<?>> getAllRegions(World world) {
         ServerLevel level = ((CraftWorld) world).getHandle();
-        List<Region> regions = new ArrayList<>();
+        List<Region<?>> regions = new ArrayList<>();
         level.regioniser.computeForAllRegions(region -> regions.add(new FoliaRegion(region)));
         return regions;
     }
 
     @Override
-    public Region getRegionAt(World world, int chunkX, int chunkZ, boolean sync) {
+    public Region<?> getRegionAt(World world, int chunkX, int chunkZ, boolean sync) {
         ServerLevel level = ((CraftWorld) world).getHandle();
         ThreadedRegionizer.ThreadedRegion<TickRegions.TickRegionData, TickRegions.TickRegionSectionData> region;
         if (sync) {
@@ -61,7 +61,7 @@ public class FoliaRegionManager implements RegionManager {
     }
 
     @Override
-    public Region getRegionAt(Location location, boolean sync) {
+    public Region<?> getRegionAt(Location location, boolean sync) {
         return getRegionAt(location.getWorld(), location.getBlockX() >> 4, location.getBlockZ() >> 4, sync);
     }
 

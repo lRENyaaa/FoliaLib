@@ -10,7 +10,7 @@ import ltd.rymc.folialib.nms.region.TpsReportLength;
 import net.minecraft.world.level.ChunkPos;
 
 
-public class FoliaRegion implements Region {
+public class FoliaRegion implements Region<ThreadedRegionizer.ThreadedRegion<TickRegions.TickRegionData, TickRegions.TickRegionSectionData>> {
 
     private final ThreadedRegionizer.ThreadedRegion<TickRegions.TickRegionData, TickRegions.TickRegionSectionData> region;
 

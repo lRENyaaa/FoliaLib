@@ -69,7 +69,7 @@ public class FoliaSchedulerProvider implements SchedulerProvider {
     }
 
     @Override
-    public Scheduler getRegionScheduler(Region region) {
+    public Scheduler getRegionScheduler(Region<?> region) {
         ChunkPosition chunkPosition = region.getCenterChunkPosition();
         return new FoliaRegionScheduler(plugin, chunkPosition.getWorld(), chunkPosition.getX(), chunkPosition.getCenterBlockZ());
     }

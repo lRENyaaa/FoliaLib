@@ -5,7 +5,7 @@ import ltd.rymc.folialib.nms.region.Region;
 import ltd.rymc.folialib.nms.region.TpsReportLength;
 import org.bukkit.Bukkit;
 
-public class BukkitRegion implements Region {
+public class BukkitRegion implements Region<Void> {
 
     @Override
     public ChunkPosition getCenterChunkPosition() {
@@ -15,6 +15,11 @@ public class BukkitRegion implements Region {
     @Override
     public double getTps(TpsReportLength length) {
         return BukkitRegionManager.getTps(length);
+    }
+
+    @Override
+    public Void getHandle() {
+        return null;
     }
 
 }

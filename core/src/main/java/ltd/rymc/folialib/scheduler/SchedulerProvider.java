@@ -41,6 +41,6 @@ public interface SchedulerProvider {
 
     Scheduler getChunkScheduler(World world, int chunkX, int chunkZ);
 
-    Scheduler getRegionScheduler(Region region);
+    Scheduler getRegionScheduler(Region<?> region);
 
 }

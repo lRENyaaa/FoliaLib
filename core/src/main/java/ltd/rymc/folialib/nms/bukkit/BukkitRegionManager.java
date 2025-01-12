@@ -31,17 +31,17 @@ public class BukkitRegionManager implements RegionManager {
     }
 
     @Override
-    public List<Region> getAllRegions(World world) {
+    public List<Region<?>> getAllRegions(World world) {
         return Collections.singletonList(region);
     }
 
     @Override
-    public Region getRegionAt(World world, int chunkX, int chunkZ, boolean sync) {
+    public Region<?> getRegionAt(World world, int chunkX, int chunkZ, boolean sync) {
         return region;
     }
 
     @Override
-    public Region getRegionAt(Location location, boolean sync) {
+    public Region<?> getRegionAt(Location location, boolean sync) {
         return region;
     }
 
